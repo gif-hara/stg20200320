@@ -19,7 +19,7 @@ namespace HK.STG
         void Awake()
         {
             Broker.Global.Receive<GameEvents.SpawnedActor>()
-                .Where(x => x.Actor.CompareTag(Tags.Player))
+                .Where(x => x.Actor.CompareTag(Tags.Name.ActorPlayer))
                 .SubscribeWithState(this, (x, _this) =>
                 {
                     _this.controlledActor = x.Actor;
