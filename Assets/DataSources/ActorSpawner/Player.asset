@@ -15,9 +15,14 @@ MonoBehaviour:
   prefab: {fileID: 734418647578825655, guid: 21f58909471ab4f1b8dae14f318b704f, type: 3}
   builders:
   - id: 0
+  - id: 1
   references:
     version: 1
     00000000:
-      type: {class: SetTag, ns: HK.STG, asm: Assembly-CSharp}
+      type: {class: SetTag, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
       data:
         tagType: 0
+    00000001:
+      type: {class: Playable, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
+      data:
+        moveSpeed: 0.1

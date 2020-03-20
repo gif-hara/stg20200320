@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HK.STG
+namespace HK.STG.ActorBuilder
 {
     /// <summary>
     /// 

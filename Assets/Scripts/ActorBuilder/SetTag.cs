@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace HK.STG
+namespace HK.STG.ActorBuilder
 {
     /// <summary>
     /// タグを設定する<see cref="ActorBuilder"/>

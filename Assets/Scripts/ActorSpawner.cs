@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using HK.STG.ActorBuilder;
 using UnityEngine;
 using UnityEngine.Assertions;
 

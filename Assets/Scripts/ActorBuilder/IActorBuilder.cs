@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace HK.STG
+namespace HK.STG.ActorBuilder
 {
     /// <summary>
     /// 
