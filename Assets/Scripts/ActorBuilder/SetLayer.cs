@@ -14,7 +14,7 @@ namespace HK.STG.ActorBuilder
         public override void Entry(Actor actor)
         {
             base.Entry(actor);
-            actor.gameObject.layer = (int)this.layerType;
+            actor.gameObject.SetLayerRecursive((int)this.layerType);
         }
     }
 }

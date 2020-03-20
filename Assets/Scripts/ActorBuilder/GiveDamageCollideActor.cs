@@ -22,6 +22,7 @@ namespace HK.STG.ActorBuilder
         public void OnTriggerEnter2D(Actor collideActor)
         {
             collideActor.Parameter.TakeDamage(this.power);
+            Debug.Log("?");
         }
 
         public object Clone()
