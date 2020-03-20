@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84e4682b360b0467d95aff7757dca1c1, type: 3}
-  m_Name: New Actor Spawner
+  m_Name: Player
   m_EditorClassIdentifier: 
   prefab: {fileID: 734418647578825655, guid: 21f58909471ab4f1b8dae14f318b704f, type: 3}
