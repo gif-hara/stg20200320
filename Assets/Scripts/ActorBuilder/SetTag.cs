@@ -13,6 +13,7 @@ namespace HK.STG.ActorBuilder
 
         public override void Entry(Actor actor)
         {
+            base.Entry(actor);
             actor.tag = Tags.AsName(this.tagType);
         }
     }
