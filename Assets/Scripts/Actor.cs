@@ -14,14 +14,28 @@ namespace HK.STG
 
         public IMessageBroker Broker { get; private set; } = new MessageBroker();
 
+        private List<IActorBuilder> builders = null;
+
         void Awake()
         {
             this.CachedTransform = this.transform;
         }
 
+        void Update()
+        {
+            if(this.builders != null)
+            {
+                foreach(var b in this.builders)
+                {
+                    b.Update();
+                }
+            }
+        }
+
         public Actor Clone(Vector3 position, Quaternion rotation, List<IActorBuilder> builders)
         {
             var instance = Instantiate(this, position, rotation);
+            instance.builders = builders;
 
             if(builders != null)
             {

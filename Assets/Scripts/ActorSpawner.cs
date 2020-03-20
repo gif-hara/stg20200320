@@ -13,6 +13,7 @@ namespace HK.STG
         [SerializeField]
         private Actor prefab = default;
 
+        [SerializeReference, SubclassSelector]
         private List<IActorBuilder> builders;
 
         private static List<IActorBuilder> compositeBuilders = new List<IActorBuilder>();

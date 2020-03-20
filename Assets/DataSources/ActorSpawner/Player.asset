@@ -13,3 +13,11 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   prefab: {fileID: 734418647578825655, guid: 21f58909471ab4f1b8dae14f318b704f, type: 3}
+  builders:
+  - id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: AutoMoveFromUp, ns: HK.STG, asm: Assembly-CSharp}
+      data:
+        speed: 0
