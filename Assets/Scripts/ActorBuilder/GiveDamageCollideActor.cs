@@ -23,5 +23,10 @@ namespace HK.STG.ActorBuilder
         {
             collideActor.Parameter.TakeDamage(this.power);
         }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

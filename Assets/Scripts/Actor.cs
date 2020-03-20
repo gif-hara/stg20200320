@@ -74,13 +74,14 @@ namespace HK.STG
         public Actor Clone(Vector3 position, Quaternion rotation, List<IActorBuilder> builders)
         {
             var instance = Instantiate(this, position, rotation);
-            instance.builders = builders;
-
-            if(builders != null)
+            instance.builders = new List<IActorBuilder>();
+            if (builders != null)
             {
-                foreach (var b in builders)
+                foreach(var b in builders)
                 {
-                    b.Entry(instance);
+                    var cloneBuilder = (IActorBuilder)b.Clone();
+                    instance.builders.Add(cloneBuilder);
+                    cloneBuilder.Entry(instance);
                 }
             }
 

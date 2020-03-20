@@ -10,6 +10,11 @@ namespace HK.STG.ActorBuilder
     {
         protected Actor owner;
 
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+
         public virtual void Entry(Actor actor)
         {
             this.owner = actor;

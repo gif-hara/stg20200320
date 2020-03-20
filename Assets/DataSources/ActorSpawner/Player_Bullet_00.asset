@@ -15,14 +15,9 @@ MonoBehaviour:
   prefab: {fileID: 4422694720737304119, guid: 6989e4755a55d46e395a937edc5e6f99, type: 3}
   builders:
   - id: 0
-  - id: 1
   references:
     version: 1
     00000000:
-      type: {class: GiveDamageCollideActor, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
-      data:
-        power: 1
-    00000001:
       type: {class: AutoMoveFromUp, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
       data:
-        speed: 0.5
+        speed: 0.1

@@ -10,7 +10,8 @@ namespace HK.STG
     /// <summary>
     /// <see cref="Actor"/>を射出するクラス
     /// </summary>
-    public sealed class Muzzle : MonoBehaviour
+    [Serializable]
+    public sealed class Muzzle
     {
         [SerializeField]
         private ActorSpawner spawner = default;
@@ -18,23 +19,29 @@ namespace HK.STG
         [SerializeField]
         private int coolTime = default;
 
+        [SerializeField]
+        private Vector3 offsetPosition = default;
+
+        [SerializeField]
+        private Vector3 offsetRotation = default;
+
         private int currentCoolTime;
 
-        public void Initialize(Actor owner)
+        public void Update()
         {
-            owner.UpdateAsObservable()
-                .SubscribeWithState(this, (_, _this) =>
-                {
-                    _this.currentCoolTime--;
-                });
+            this.currentCoolTime--;
+        }
 
-            owner.Broker.Receive<ActorEvents.Fire>()
-                .Where(_ => this.currentCoolTime <= 0)
-                .SubscribeWithState(this, (_, _this) =>
-                {
-                    _this.spawner.Spawn(_this.transform.position, _this.transform.rotation);
-                })
-                .AddTo(owner);
+        public void Fire(Actor actor)
+        {
+            if(this.currentCoolTime > 0)
+            {
+                return;
+            }
+
+            var position = actor.CachedTransform.position + this.offsetPosition;
+            var rotation = actor.CachedTransform.rotation * Quaternion.Euler(this.offsetRotation);
+            this.spawner.Spawn(position, rotation);
         }
     }
 }

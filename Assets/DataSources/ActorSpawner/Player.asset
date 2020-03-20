@@ -16,7 +16,6 @@ MonoBehaviour:
   builders:
   - id: 0
   - id: 1
-  - id: 2
   references:
     version: 1
     00000000:
@@ -27,7 +26,8 @@ MonoBehaviour:
       type: {class: Playable, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
       data:
         moveSpeed: 0.1
-    00000002:
-      type: {class: GiveDamageCollideActor, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
-      data:
-        power: 1
+        muzzles:
+        - spawner: {fileID: 11400000, guid: 3695548611b7e4fffb7fe36608b21658, type: 2}
+          coolTime: 3
+          offsetPosition: {x: 0, y: 0, z: 0}
+          offsetRotation: {x: 0, y: 0, z: 0}

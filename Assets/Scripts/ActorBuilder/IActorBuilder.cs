@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace HK.STG.ActorBuilder
@@ -6,7 +7,7 @@ namespace HK.STG.ActorBuilder
     /// <summary>
     /// 
     /// </summary>
-    public interface IActorBuilder
+    public interface IActorBuilder : ICloneable
     {
         void Entry(Actor actor);
 
