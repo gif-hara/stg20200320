@@ -112,6 +112,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -219,7 +220,7 @@ PrefabInstance:
     - target: {fileID: 8672014878934297934, guid: ab017395aaab547629bcab6758890084,
         type: 3}
       propertyPath: m_TagString
-      value: Actor/Player
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab017395aaab547629bcab6758890084, type: 3}
