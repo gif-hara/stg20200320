@@ -8,6 +8,8 @@ namespace HK.STG
     /// </summary>
     public interface IActorBuilder
     {
-        void Build(Actor actor);
+        void Entry(Actor actor);
+
+        void Update();
     }
 }

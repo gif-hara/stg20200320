@@ -15,9 +15,20 @@ namespace HK.STG
 
         private List<IActorBuilder> builders;
 
-        public void Spawn(Vector3 position, Quaternion rotation)
+        private static List<IActorBuilder> compositeBuilders = new List<IActorBuilder>();
+
+        public Actor Spawn(Vector3 position, Quaternion rotation)
         {
-            var instance = this.prefab.Clone(position, rotation, this.builders);
+            return this.prefab.Clone(position, rotation, this.builders);
+        }
+
+        public Actor Spawn(Vector3 position, Quaternion rotation, IEnumerable<IActorBuilder> additionalBuilders)
+        {
+            compositeBuilders.Clear();
+            compositeBuilders.AddRange(this.builders);
+            compositeBuilders.AddRange(additionalBuilders);
+
+            return this.prefab.Clone(position, rotation, compositeBuilders);
         }
     }
 }

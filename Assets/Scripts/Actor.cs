@@ -27,7 +27,7 @@ namespace HK.STG
             {
                 foreach (var b in builders)
                 {
-                    b.Build(instance);
+                    b.Entry(instance);
                 }
             }
 
