@@ -15,10 +15,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Actor/Player
+  - Actor/Enemy
+  - Actor/Player/Bullet
+  - Actor/Enemy/Bullet
   - 
   - 
   - 

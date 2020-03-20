@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84e4682b360b0467d95aff7757dca1c1, type: 3}
-  m_Name: Player
+  m_Name: Player_Bullet_00
   m_EditorClassIdentifier: 
-  prefab: {fileID: 734418647578825655, guid: 21f58909471ab4f1b8dae14f318b704f, type: 3}
+  prefab: {fileID: 4422694720737304119, guid: 6989e4755a55d46e395a937edc5e6f99, type: 3}
   builders:
   - id: 0
   - id: 1
   references:
     version: 1
     00000000:
-      type: {class: SetLayer, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
+      type: {class: SetTag, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
       data:
-        layerType: 256
+        tagType: 0
     00000001:
       type: {class: Playable, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
       data:

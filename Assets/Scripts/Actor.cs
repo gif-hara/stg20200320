@@ -33,6 +33,11 @@ namespace HK.STG
             }
         }
 
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log(other, other);
+        }
+
         public Actor Clone(Vector3 position, Quaternion rotation, List<IActorBuilder> builders)
         {
             var instance = Instantiate(this, position, rotation);
