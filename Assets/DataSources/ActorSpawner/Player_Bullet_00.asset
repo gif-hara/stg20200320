@@ -19,10 +19,10 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: SetTag, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
+      type: {class: GiveDamageCollideActor, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
       data:
-        tagType: 0
+        power: 1
     00000001:
-      type: {class: Playable, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
+      type: {class: AutoMoveFromUp, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
       data:
-        moveSpeed: 0.1
+        speed: 0.5

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using HK.STG.ActorBuilder;
 using UniRx;
 using UnityEngine;
@@ -17,9 +18,14 @@ namespace HK.STG
 
         private List<IActorBuilder> builders = null;
 
+        public ActorParameter Parameter { get; private set; }
+
+        private bool isDead = false;
+
         void Awake()
         {
             this.CachedTransform = this.transform;
+            this.Parameter = new ActorParameter(this);
         }
 
         void Update()
@@ -35,7 +41,34 @@ namespace HK.STG
 
         void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log(other, other);
+            var collideActor = GetParentActor(other.transform);
+            if(collideActor == null)
+            {
+                return;
+            }
+
+            this.InvokeEvent<IActorBuilderOnTriggerEnter2D>(x => x.OnTriggerEnter2D(collideActor));
+        }
+
+        public void Dead()
+        {
+            if(this.isDead)
+            {
+                return;
+            }
+
+            this.isDead = true;
+        }
+
+        private void InvokeEvent<T>(Action<T> action) where T : IActorBuilder
+        {
+            foreach(var b in this.builders)
+            {
+                if(b is T)
+                {
+                    action((T)b);
+                }
+            }
         }
 
         public Actor Clone(Vector3 position, Quaternion rotation, List<IActorBuilder> builders)
@@ -54,6 +87,25 @@ namespace HK.STG
             HK.Framework.EventSystems.Broker.Global.Publish(GameEvents.SpawnedActor.Get(instance));
 
             return instance;
+        }
+
+        private static Actor GetParentActor(Transform transform)
+        {
+            var actor = transform.GetComponent<Actor>();
+            if(actor != null)
+            {
+                return actor;
+            }
+            else
+            {
+                var parent = transform.parent;
+                if(parent == null)
+                {
+                    return null;
+                }
+
+                return GetParentActor(parent);
+            }
         }
     }
 }

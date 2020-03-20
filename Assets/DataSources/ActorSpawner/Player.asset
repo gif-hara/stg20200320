@@ -16,13 +16,18 @@ MonoBehaviour:
   builders:
   - id: 0
   - id: 1
+  - id: 2
   references:
     version: 1
     00000000:
       type: {class: SetLayer, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
       data:
-        layerType: 256
+        layerType: 8
     00000001:
       type: {class: Playable, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
       data:
         moveSpeed: 0.1
+    00000002:
+      type: {class: GiveDamageCollideActor, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
+      data:
+        power: 1
