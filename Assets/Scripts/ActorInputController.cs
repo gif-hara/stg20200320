@@ -12,7 +12,7 @@ namespace HK.STG
     public sealed class ActorInputController : MonoBehaviour
     {
         [SerializeField]
-        private float moveSpeed;
+        private float moveSpeed = default;
 
         private Actor controlledActor;
 
@@ -33,7 +33,7 @@ namespace HK.STG
                     var velocity = Vector3.zero;
                     velocity.x = Input.GetKey(KeyCode.LeftArrow) ? -1.0f : Input.GetKey(KeyCode.RightArrow) ? 1.0f : 0.0f;
                     velocity.y = Input.GetKey(KeyCode.UpArrow) ? 1.0f : Input.GetKey(KeyCode.DownArrow) ? -1.0f : 0.0f;
-                    _this.controlledActor.CachedTransform.localPosition += velocity.normalized * _this.moveSpeed * Time.deltaTime;
+                    _this.controlledActor.CachedTransform.localPosition += velocity.normalized * _this.moveSpeed;
                 });
         }
     }
