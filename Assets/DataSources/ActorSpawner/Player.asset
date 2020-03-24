@@ -28,6 +28,6 @@ MonoBehaviour:
         moveSpeed: 0.1
         muzzles:
         - spawner: {fileID: 11400000, guid: 3695548611b7e4fffb7fe36608b21658, type: 2}
-          coolTime: 3
+          coolTime: 9
           offsetPosition: {x: 0, y: 0, z: 0}
           offsetRotation: {x: 0, y: 0, z: 0}

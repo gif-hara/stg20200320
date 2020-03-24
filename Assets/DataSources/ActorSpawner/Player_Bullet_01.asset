@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84e4682b360b0467d95aff7757dca1c1, type: 3}
-  m_Name: Player_Bullet_00
+  m_Name: Player_Bullet_01
   m_EditorClassIdentifier: 
   prefab: {fileID: 4422694720737304119, guid: 6989e4755a55d46e395a937edc5e6f99, type: 3}
   builders:
   - id: 0
   - id: 1
   - id: 2
-  - id: 3
-  - id: 4
   references:
     version: 1
     00000000:
@@ -33,21 +31,3 @@ MonoBehaviour:
       type: {class: SetLayer, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
       data:
         layerType: 10
-    00000003:
-      type: {class: SpawnActorInterval, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
-      data:
-        spawners:
-        - {fileID: 11400000, guid: 8fc36613a11c445fd9e309b651f562f4, type: 2}
-        interval: 3
-        initial: 0
-        offsetPosition: {x: 0, y: 0, z: 0}
-        offsetRotation: {x: 0, y: 0, z: 90}
-    00000004:
-      type: {class: SpawnActorInterval, ns: HK.STG.ActorBuilder, asm: Assembly-CSharp}
-      data:
-        spawners:
-        - {fileID: 11400000, guid: 8fc36613a11c445fd9e309b651f562f4, type: 2}
-        interval: 3
-        initial: 0
-        offsetPosition: {x: 0, y: 0, z: 0}
-        offsetRotation: {x: 0, y: 0, z: -90}

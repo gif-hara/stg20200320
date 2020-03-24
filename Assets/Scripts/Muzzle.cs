@@ -42,6 +42,7 @@ namespace HK.STG
             var position = actor.CachedTransform.position + this.offsetPosition;
             var rotation = actor.CachedTransform.rotation * Quaternion.Euler(this.offsetRotation);
             this.spawner.Spawn(position, rotation);
+            this.currentCoolTime = this.coolTime;
         }
     }
 }
